@@ -10,7 +10,7 @@ async function pageLoaded() {
   let OutputElement = document.querySelector('.rides')
   for (let i=0; i < json.length; i++){
 
-    if(json[i].length > 1) {
+    if (json[i].length > 1) {
     levelOfService = 'Noober Pool'
     OutputElement.insertAdjacentHTML('beforeend', `
     <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
@@ -43,7 +43,7 @@ async function pageLoaded() {
     </h1>`)
     }
 
-    for(let p = 0; p < json[i].length;p++) {
+    for (let p = 0; p < json[i].length;p++) {
       passengerName = json[i][p].passengerDetails.first + ' ' + json[i][p].passengerDetails.last
       passengerPhone = json[i][p].passengerDetails.phoneNumber
       passengerNumberOfPassengers = json[i][p].numberOfPassengers
@@ -51,7 +51,7 @@ async function pageLoaded() {
       passengerPickupAddressLine2 = json[i][p].pickupLocation.city + ', ' + json[i][p].pickupLocation.state + ' ' + json[i][p].pickupLocation.zip
       passengerDropoffAddressLine1 = json[i][p].dropoffLocation.address
       passengerDropoffAddressLine2 = json[i][p].dropoffLocation.city + ', ' + json[i][p].dropoffLocation.state + ' ' + json[i][p].dropoffLocation.zip
-    if(json[i][p].length > 1) {
+    if (json[i][p].length > 1) {
       OutputElement.insertAdjacentHTML('beforeend', `
       <div class="border-4 border-gray-900 p-4 my-4 text-left">
       <div class="flex">
@@ -80,7 +80,7 @@ async function pageLoaded() {
     </div>
     `)
    }
-   else if(json[i][0].purpleRequested == true) {
+   else if (json[i][0].purpleRequested == true) {
     OutputElement.insertAdjacentHTML ('beforeend', `
     <div class="border-4 border-purple-500 p-4 my-4 text-left">
       <div class="flex">
@@ -109,7 +109,7 @@ async function pageLoaded() {
     </div>
   `)
     }
-    else if(json[i][0].numberOfPassengers > 3) {
+    else if (json[i][0].numberOfPassengers > 3) {
       OutputElement.insertAdjacentHTML ('beforeend', `
       <div class="border-4 border-gray-900 p-4 my-4 text-left">
       <div class="flex">
@@ -172,6 +172,5 @@ async function pageLoaded() {
 
   }
   }
-
 window.addEventListener('DOMContentLoaded', pageLoaded)
 
