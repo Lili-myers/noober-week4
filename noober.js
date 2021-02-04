@@ -17,32 +17,28 @@ async function pageLoaded() {
     <i class="fas fa-car-side"></i>
     <span>${levelOfService}</span>
     </h1>`)
+    } else if (json[i] [0].purpleRequested == true) {
+      levelOfService = 'Noober Purple'
+      OutputElement.insertAdjacentHTML ('beforeend' , `
+      <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+      <i class="fas fa-car-side"></i>
+      <span>${levelOfService}</span>
+      </h1>`)
+    } else if (json[i] [0].numberOfPassengers > 3) {
+      levelOfService = 'Noober XL'
+      OutputElement.insertAdjacentHTML ('beforeend', `
+      <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+      <i class="fas fa-car-side"></i>
+      <span>${levelOfService}</span>
+      </h1>`)
+    } else {
+      levelOfService = 'Noober X'
+      OutputElement.insertAdjacentHTML ('beforeend', `
+      <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+      <i class="fas fa-car-side"></i>
+      <span>${levelOfService}</span>
+      </h1>`)
     }
-    else if (json[i] [0].purpleRequested == true) {
-    levelOfService = 'Noober Purple'
-    OutputElement.insertAdjacentHTML ('beforeend' , `
-    <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-    <i class="fas fa-car-side"></i>
-    <span>${levelOfService}</span>
-    </h1>`)
-    }
-    else if (json[i] [0].numberOfPassengers > 3) {
-    levelOfService = 'Noober XL'
-    OutputElement.insertAdjacentHTML ('beforeend', `
-    <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-    <i class="fas fa-car-side"></i>
-    <span>${levelOfService}</span>
-    </h1>`)
-    }
-    else {
-    levelOfService = 'Noober X'
-    OutputElement.insertAdjacentHTML ('beforeend', `
-    <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-    <i class="fas fa-car-side"></i>
-    <span>${levelOfService}</span>
-    </h1>`)
-    }
-
     for (let p = 0; p < json[i].length;p++) {
       passengerName = json[i][p].passengerDetails.first + ' ' + json[i][p].passengerDetails.last
       passengerPhone = json[i][p].passengerDetails.phoneNumber
@@ -79,8 +75,7 @@ async function pageLoaded() {
       </div>
     </div>
     `)
-   }
-   else if (json[i][0].purpleRequested == true) {
+   } else if (json[i][0].purpleRequested == true) {
     OutputElement.insertAdjacentHTML ('beforeend', `
     <div class="border-4 border-purple-500 p-4 my-4 text-left">
       <div class="flex">
@@ -108,8 +103,7 @@ async function pageLoaded() {
       </div>
     </div>
   `)
-    }
-    else if (json[i][0].numberOfPassengers > 3) {
+  } else if (json[i][0].numberOfPassengers > 3) {
       OutputElement.insertAdjacentHTML ('beforeend', `
       <div class="border-4 border-gray-900 p-4 my-4 text-left">
       <div class="flex">
@@ -137,8 +131,7 @@ async function pageLoaded() {
       </div>
     </div>
     `)
-  }
-  else {
+  } else {
     OutputElement.insertAdjacentHTML ('beforeend', `
     <div class="border-4 border-gray-900 p-4 my-4 text-left">
     <div class="flex">
